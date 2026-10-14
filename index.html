@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Networking con Propósito | 3.ª Edición — 3 de Diciembre</title>
+    <meta name="description" content="Tercera edición de Networking con Propósito en Lechería. 3 de Diciembre a las 5:30 PM en Lokal. Evento de vinculación comercial, actualización fiscal, criptofinanzas y desarrollo organizacional. Entrada libre previo registro.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#061320',
+                            navyLight: '#0B2338',
+                            surface: '#0F2C46',
+                            blue: '#0E5D9E',
+                            cyan: '#00A3FF',
+                            orange: '#E5982A',
+                            orangeHover: '#F5A738',
+                            muted: '#94A3B8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #061320;
+            color: #F8FAFC;
+            overflow-x: hidden;
+        }
+        .card-luxury {
+            background: linear-gradient(135deg, rgba(15, 44, 70, 0.6) 0%, rgba(11, 35, 56, 0.35) 100%);
+            border: 1px solid rgba(229, 152, 42, 0.22);
+            backdrop-filter: blur(10px);
+            transition: all 0.25s ease;
+        }
+        .card-luxury:hover {
+            border-color: rgba(229, 152, 42, 0.65);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -8px rgba(229, 152, 42, 0.12);
+        }
+        .glow-sphere {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(14, 93, 158, 0.18) 0%, rgba(6, 19, 32, 0) 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-orange selection:text-white">
+
+    <!-- Línea sutil superior de acento naranja -->
+    <div class="h-[2px] w-full bg-gradient-to-r from-transparent via-brand-orange to-transparent"></div>
+
+    <!-- ENCABEZADO / NAVEGACIÓN -->
+    <header class="sticky top-0 z-50 bg-[#061320]/90 backdrop-blur-md border-b border-brand-orange/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <!-- Logos Intactos -->
+            <div class="flex items-center gap-3 sm:gap-5">
+                <a href="https://cacoinnatur.github.io/site/" target="_blank" rel="noopener noreferrer" title="Cámara de Comercio de Lechería">
+                    <img src="logo-ccl-r2.jpg" alt="Cámara de Comercio de Lechería" class="h-9 sm:h-11 w-auto object-contain bg-white rounded px-2 py-0.5">
+                </a>
+                <div class="h-6 w-[1px] bg-brand-orange/40"></div>
+                <a href="https://fedecamarasanz.github.io/fanz/" target="_blank" rel="noopener noreferrer" title="Fedecámaras Anzoátegui">
+                    <img src="logo-fedecamaras.png" alt="Fedecámaras Anzoátegui" class="h-8 sm:h-10 w-auto object-contain rounded">
+                </a>
+            </div>
+
+            <!-- Accesos y CTA de Navegación -->
+            <div class="flex items-center gap-3 sm:gap-4">
+                <a href="https://wa.me/584224042020?text=Saludos%2C%20estoy%20interesado%20en%20patrocinar%20el%20evento%20Networking%20con%20Prop%C3%B3sito%20(Tercera%20Edici%C3%B3n)" target="_blank" rel="noopener noreferrer" 
+                   class="text-xs font-semibold px-3 py-2 rounded border border-brand-orange/40 text-brand-orange hover:bg-brand-orange/10 transition-colors">
+                    Para patrocinios
+                </a>
+                <a href="https://forms.gle/m1KRTpWMn3rFK2747" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center justify-center px-4 py-2 text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-brand-blue to-[#0A4B80] hover:to-brand-blue rounded border border-brand-cyan/40 shadow-md transition-all hover:scale-[1.02] active:scale-[0.98]">
+                    Registrar Asistencia
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-12 pb-16 lg:pt-20 lg:pb-24 overflow-hidden">
+        <div class="glow-sphere top-0 left-1/3"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+            <!-- Badge Oficial de Fecha y Edición -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-orange/50 bg-brand-orange/10 text-brand-orange text-xs font-semibold uppercase tracking-wider mb-6">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-orange animate-ping"></span>
+                Networking con Propósito — 3.ª Edición (NCP3) • Jueves 3 de Diciembre
+            </div>
+
+            <!-- Título Principal -->
+            <h1 class="font-display text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                Herramientas, Conexiones y Estrategia para tu Negocio en <span class="bg-gradient-to-r from-white via-slate-100 to-brand-cyan bg-clip-text text-transparent">Lechería</span>
+            </h1>
+
+            <div class="h-[1px] w-24 bg-gradient-to-r from-transparent via-brand-orange to-transparent mx-auto my-5"></div>
+
+            <p class="text-base sm:text-lg text-slate-300 font-light max-w-2xl mx-auto leading-relaxed">
+                Un encuentro de vinculación comercial, actualización fiscal, pagos en criptoactivos y escalamiento de equipos. Evento gratuito abierto a comerciantes, directores, consultores, emprendedores y público general.
+            </p>
+
+            <!-- Ficha Rápida del Evento -->
+            <div class="mt-8 max-w-2xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+                <div class="p-3 rounded bg-brand-navyLight/70 border border-slate-700/60">
+                    <span class="text-[11px] uppercase text-brand-orange font-semibold tracking-wider block">Fecha</span>
+                    <span class="text-sm font-bold text-white mt-0.5 block">3 de Diciembre</span>
+                </div>
+                <div class="p-3 rounded bg-brand-navyLight/70 border border-slate-700/60">
+                    <span class="text-[11px] uppercase text-brand-orange font-semibold tracking-wider block">Horario</span>
+                    <span class="text-sm font-bold text-white mt-0.5 block">5:30 PM – 9:00 PM</span>
+                </div>
+                <div class="p-3 rounded bg-brand-navyLight/70 border border-slate-700/60">
+                    <span class="text-[11px] uppercase text-brand-orange font-semibold tracking-wider block">Lugar</span>
+                    <span class="text-sm font-bold text-white mt-0.5 block">Lokal, Lechería</span>
+                </div>
+                <div class="p-3 rounded bg-brand-navyLight/70 border border-slate-700/60">
+                    <span class="text-[11px] uppercase text-brand-orange font-semibold tracking-wider block">Audiencia</span>
+                    <span class="text-sm font-bold text-white mt-0.5 block">Todos (Gratis)</span>
+                </div>
+            </div>
+
+            <!-- Contador en Cuenta Regresiva (Objetivo: 3 de Diciembre, 5:30 PM) -->
+            <div class="mt-8 max-w-md mx-auto bg-brand-navyLight/90 p-5 rounded-xl border border-brand-orange/30 shadow-xl">
+                <span class="text-[11px] font-semibold text-brand-orange uppercase tracking-wider block mb-3">
+                    Cuenta Regresiva para el Evento
+                </span>
+                <div class="grid grid-cols-4 gap-2 text-center">
+                    <div class="bg-brand-surface/70 rounded p-2 border border-slate-700/50">
+                        <span id="cd-days" class="font-display text-2xl sm:text-3xl font-bold text-white">00</span>
+                        <span class="block text-[10px] text-slate-400 uppercase tracking-widest mt-0.5">Días</span>
+                    </div>
+                    <div class="bg-brand-surface/70 rounded p-2 border border-slate-700/50">
+                        <span id="cd-hours" class="font-display text-2xl sm:text-3xl font-bold text-white">00</span>
+                        <span class="block text-[10px] text-slate-400 uppercase tracking-widest mt-0.5">Horas</span>
+                    </div>
+                    <div class="bg-brand-surface/70 rounded p-2 border border-slate-700/50">
+                        <span id="cd-minutes" class="font-display text-2xl sm:text-3xl font-bold text-white">00</span>
+                        <span class="block text-[10px] text-slate-400 uppercase tracking-widest mt-0.5">Min</span>
+                    </div>
+                    <div class="bg-brand-surface/70 rounded p-2 border border-slate-700/50">
+                        <span id="cd-seconds" class="font-display text-2xl sm:text-3xl font-bold text-brand-orange">00</span>
+                        <span class="block text-[10px] text-slate-400 uppercase tracking-widest mt-0.5">Seg</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTAs Principales -->
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a href="https://forms.gle/m1KRTpWMn3rFK2747" target="_blank" rel="noopener noreferrer"
+                   class="w-full sm:w-auto px-7 py-3.5 bg-brand-orange hover:bg-brand-orangeHover text-[#061320] font-bold text-sm rounded shadow-lg shadow-brand-orange/20 transition-all transform hover:-translate-y-0.5">
+                    Registrar Asistencia &rarr;
+                </a>
+                <a href="https://wa.me/584224042020?text=Saludos%2C%20estoy%20interesado%20en%20patrocinar%20el%20evento%20Networking%20con%20Prop%C3%B3sito%20(Tercera%20Edici%C3%B3n)" target="_blank" rel="noopener noreferrer"
+                   class="w-full sm:w-auto px-6 py-3.5 bg-transparent hover:bg-slate-800/60 text-slate-200 hover:text-white font-medium text-sm rounded border border-slate-600 hover:border-brand-orange/50 transition-all">
+                    Para patrocinios
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LÍNEA SEPARADORA -->
+    <div class="max-w-4xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-brand-orange/40 to-transparent"></div>
+
+    <!-- PONENTES CON ENLACES INDIVIDUALES -->
+    <section class="py-16 max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-brand-orange uppercase text-xs font-bold tracking-widest">Ponencias Clave</span>
+            <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">Especialistas Invitados</h2>
+            <div class="h-[1px] w-16 bg-brand-orange mx-auto my-3"></div>
+            <p class="text-slate-300 text-sm">Haz clic sobre cada ponente para explorar su canal oficial y trayectoria.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Ponente 1: María Calderón -->
+            <a href="https://linktr.ee/Tucontador.911?utm_source=linktree_profile_share&ltsid=5bcfae06-ab2c-4c4f-b2dd-950901c5e277" 
+               target="_blank" rel="noopener noreferrer" 
+               class="card-luxury rounded-xl p-6 flex flex-col justify-between group cursor-pointer">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-[11px] font-semibold text-brand-orange uppercase tracking-wider px-2 py-0.5 rounded bg-brand-orange/10 border border-brand-orange/30">
+                            Novedades Fiscales
+                        </span>
+                        <span class="text-xs text-brand-cyan group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold">
+                            Enlace &rarr;
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-brand-orange transition-colors">María Calderón</h3>
+                    <p class="text-xs font-medium text-slate-300 mt-0.5">tucontador911</p>
+                    <div class="h-[1px] w-full bg-slate-700/60 my-3"></div>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Actualizaciones normativas, control preventivo de riesgos fiscales y directrices contables prácticas para empresas y comercios.
+                    </p>
+                </div>
+                <div class="mt-5 pt-3 border-t border-slate-700/50 flex items-center justify-between text-xs text-slate-400">
+                    <span>20 min + 5 min Q&A</span>
+                    <span class="text-brand-cyan">tucontador911</span>
+                </div>
+            </a>
+
+            <!-- Ponente 2: Crixto Venezuela -->
+            <a href="https://www.crixto.com/" 
+               target="_blank" rel="noopener noreferrer" 
+               class="card-luxury rounded-xl p-6 flex flex-col justify-between group cursor-pointer">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-[11px] font-semibold text-brand-orange uppercase tracking-wider px-2 py-0.5 rounded bg-brand-orange/10 border border-brand-orange/30">
+                            Criptofinanzas
+                        </span>
+                        <span class="text-xs text-brand-cyan group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold">
+                            Enlace &rarr;
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-brand-orange transition-colors">Crixto Venezuela</h3>
+                    <p class="text-xs font-medium text-slate-300 mt-0.5">Representante Designado</p>
+                    <div class="h-[1px] w-full bg-slate-700/60 my-3"></div>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Infraestructura de pasarelas de pago, liquidación en criptoactivos y optimización de cobros comerciales corporativos.
+                    </p>
+                </div>
+                <div class="mt-5 pt-3 border-t border-slate-700/50 flex items-center justify-between text-xs text-slate-400">
+                    <span>20 min + 5 min Q&A</span>
+                    <span class="text-brand-cyan">crixto.com</span>
+                </div>
+            </a>
+
+            <!-- Ponente 3: Orlando Suárez -->
+            <a href="https://apatheia73.github.io/agp/" 
+               target="_blank" rel="noopener noreferrer" 
+               class="card-luxury rounded-xl p-6 flex flex-col justify-between group cursor-pointer">
+                <div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-[11px] font-semibold text-brand-orange uppercase tracking-wider px-2 py-0.5 rounded bg-brand-orange/10 border border-brand-orange/30">
+                            Desarrollo Organizacional
+                        </span>
+                        <span class="text-xs text-brand-cyan group-hover:translate-x-1 transition-transform inline-flex items-center gap-1 font-semibold">
+                            Enlace &rarr;
+                        </span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-brand-orange transition-colors">Orlando Suárez</h3>
+                    <p class="text-xs font-medium text-slate-300 mt-0.5">Apatheia Growth Partner</p>
+                    <div class="h-[1px] w-full bg-slate-700/60 my-3"></div>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Cultura empresarial, esquemas de retención de talento, optimización del mando operativo y escalabilidad de equipos.
+                    </p>
+                </div>
+                <div class="mt-5 pt-3 border-t border-slate-700/50 flex items-center justify-between text-xs text-slate-400">
+                    <span>20 min + 5 min Q&A</span>
+                    <span class="text-brand-cyan">Apatheia Growth</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- AGENDA DEL EVENTO -->
+    <section class="py-14 bg-brand-navyLight/40 border-y border-brand-orange/20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10">
+                <span class="text-brand-orange uppercase text-xs font-bold tracking-widest">Cronograma</span>
+                <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">Agenda de la Jornada</h2>
+                <div class="h-[1px] w-16 bg-brand-orange mx-auto my-3"></div>
+                <p class="text-slate-300 text-xs sm:text-sm">210 minutos diseñados para actualizarte y conectar con aliados comerciales.</p>
+            </div>
+
+            <div class="space-y-3">
+                <div class="p-4 rounded-lg bg-brand-navyLight/70 border-l-4 border-slate-600 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-bold text-brand-orange bg-brand-orange/10 px-2.5 py-1 rounded border border-brand-orange/30">
+                            5:30 PM – 6:00 PM
+                        </span>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Acreditación y Bienvenida</h4>
+                            <p class="text-xs text-slate-400">Registro, entrega de credenciales y apertura institucional.</p>
+                        </div>
+                    </div>
+                    <span class="text-[11px] text-slate-400">Recepción</span>
+                </div>
+
+                <div class="p-4 rounded-lg bg-brand-navyLight/70 border-l-4 border-brand-blue flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-bold text-brand-orange bg-brand-orange/10 px-2.5 py-1 rounded border border-brand-orange/30">
+                            6:00 PM – 6:25 PM
+                        </span>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Ponencia 1: Marco Contable y Fiscal</h4>
+                            <p class="text-xs text-slate-300">María Calderón (tucontador911) — 20 min charla + 5 min preguntas.</p>
+                        </div>
+                    </div>
+                    <span class="text-[11px] text-brand-cyan">Ponencia</span>
+                </div>
+
+                <div class="p-4 rounded-lg bg-brand-navyLight/70 border-l-4 border-brand-blue flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-bold text-brand-orange bg-brand-orange/10 px-2.5 py-1 rounded border border-brand-orange/30">
+                            6:25 PM – 6:50 PM
+                        </span>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Ponencia 2: Tecnología Criptofinanciera</h4>
+                            <p class="text-xs text-slate-300">Crixto Venezuela — 20 min charla + 5 min preguntas.</p>
+                        </div>
+                    </div>
+                    <span class="text-[11px] text-brand-cyan">Ponencia</span>
+                </div>
+
+                <div class="p-4 rounded-lg bg-brand-navyLight/70 border-l-4 border-brand-blue flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-bold text-brand-orange bg-brand-orange/10 px-2.5 py-1 rounded border border-brand-orange/30">
+                            6:50 PM – 7:15 PM
+                        </span>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Ponencia 3: Desarrollo Organizacional</h4>
+                            <p class="text-xs text-slate-300">Orlando Suárez (Apatheia Growth Partner) — 20 min charla + 5 min preguntas.</p>
+                        </div>
+                    </div>
+                    <span class="text-[11px] text-brand-cyan">Ponencia</span>
+                </div>
+
+                <div class="p-4 rounded-lg bg-brand-navyLight/70 border-l-4 border-slate-600 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-bold text-brand-orange bg-brand-orange/10 px-2.5 py-1 rounded border border-brand-orange/30">
+                            7:15 PM – 7:30 PM
+                        </span>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Cierre Institucional</h4>
+                            <p class="text-xs text-slate-400">Palabras de la directiva y reconocimientos.</p>
+                        </div>
+                    </div>
+                    <span class="text-[11px] text-slate-400">Protocolo</span>
+                </div>
+
+                <div class="p-4 rounded-lg bg-brand-surface/90 border-l-4 border-brand-orange flex flex-col sm:flex-row sm:items-center justify-between gap-2 shadow-lg">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-bold text-white bg-brand-orange px-2.5 py-1 rounded">
+                            7:30 PM – 9:00 PM
+                        </span>
+                        <div>
+                            <h4 class="font-bold text-white text-sm">Networking Guiado y Libre</h4>
+                            <p class="text-xs text-slate-300">Intercambio de proyectos, contactos comerciales y reuniones 1 a 1.</p>
+                        </div>
+                    </div>
+                    <span class="text-[11px] text-brand-orange font-bold">90 Minutos</span>
+                </div>
+            </div>
+
+            <!-- CTA Directo Bajo Agenda -->
+            <div class="mt-8 text-center flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a href="https://forms.gle/m1KRTpWMn3rFK2747" target="_blank" rel="noopener noreferrer" 
+                   class="w-full sm:w-auto px-6 py-3 bg-brand-orange hover:bg-brand-orangeHover text-[#061320] font-bold text-sm rounded shadow transition-all">
+                    Registrar Asistencia
+                </a>
+                <a href="https://wa.me/584224042020?text=Saludos%2C%20estoy%20interesado%20en%20patrocinar%20el%20evento%20Networking%20con%20Prop%C3%B3sito%20(Tercera%20Edici%C3%B3n)" target="_blank" rel="noopener noreferrer" 
+                   class="w-full sm:w-auto px-5 py-3 rounded border border-brand-orange/40 text-brand-orange hover:bg-brand-orange/10 text-xs font-semibold transition-all">
+                    Para patrocinios
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="bg-[#040D17] border-t border-brand-orange/30 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800">
+                <!-- Logos Intactos -->
+                <div class="flex items-center gap-4">
+                    <img src="logo-ccl-r2.jpg" alt="Cámara de Comercio de Lechería" class="h-9 w-auto object-contain bg-white rounded px-2 py-0.5">
+                    <div class="h-6 w-[1px] bg-brand-orange/40"></div>
+                    <img src="logo-fedecamaras.png" alt="Fedecámaras Anzoátegui" class="h-8 w-auto object-contain rounded">
+                </div>
+
+                <!-- Enlaces Rápidos Requeridos -->
+                <div class="flex flex-wrap items-center justify-center gap-5 text-xs text-slate-300 font-medium">
+                    <a href="https://cacoinnatur.github.io/site/" target="_blank" rel="noopener noreferrer" class="hover:text-brand-orange transition-colors">Web CCL</a>
+                    <a href="https://fedecamarasanz.github.io/fanz/" target="_blank" rel="noopener noreferrer" class="hover:text-brand-orange transition-colors">Web FANZ</a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-orange transition-colors">Instagram CCL</a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-orange transition-colors">Instagram FANZ</a>
+                    <a href="https://wa.me/584224042020?text=Saludos%2C%20estoy%20interesado%20en%20patrocinar%20el%20evento%20Networking%20con%20Prop%C3%B3sito%20(Tercera%20Edici%C3%B3n)" target="_blank" rel="noopener noreferrer" class="text-brand-orange hover:underline font-semibold">Para patrocinios</a>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
+                <p>&copy; 2026 Cámara de Comercio de Lechería & Fedecámaras Anzoátegui. Evento Gratuito.</p>
+                <p class="text-slate-400">Networking con Propósito — Edición III • 3 de Diciembre</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CONTADOR JS DIRIGIDO AL 3 DE DICIEMBRE, 5:30 PM -->
+    <script>
+        // Fecha objetivo exacta: 3 de diciembre a las 5:30 PM (17:30)
+        const targetDate = new Date('2026-12-03T17:30:00');
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate.getTime() - now;
+
+            if (distance < 0) {
+                document.getElementById('cd-days').innerText = "00";
+                document.getElementById('cd-hours').innerText = "00";
+                document.getElementById('cd-minutes').innerText = "00";
+                document.getElementById('cd-seconds').innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('cd-days').innerText = String(days).padStart(2, '0');
+            document.getElementById('cd-hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('cd-minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('cd-seconds').innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
